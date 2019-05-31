@@ -1,6 +1,6 @@
 {
   "name": "use-state-with-callback",
-  "version": "1.0.5",
+  "version": "1.0.14",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -13,8 +13,8 @@
   "author": "“Robin <hello@rwieruch.com”> (https://www.robinwieruch.de)",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -45,6 +45,5 @@
   "bugs": {
     "url": "https://github.com/the-road-to-learn-react/use-combined-reducers/issues"
   },
-  "homepage": "https://github.com/the-road-to-learn-react/use-combined-reducers#readme",
-  "dependencies": {}
+  "homepage": "https://github.com/the-road-to-learn-react/use-combined-reducers#readme"
 }
