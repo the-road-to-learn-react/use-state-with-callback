@@ -1,20 +1,20 @@
-import React from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 
-const useStateWithCallback = (initialState, callback) => {
-  const [state, setState] = React.useState(initialState);
+const useStateWithCallbackBlueprint = effect => (
+  initialState,
+  callback,
+) => {
+  const [state, setState] = useState(initialState);
 
-  React.useEffect(() => callback(state), [state, callback]);
-
-  return [state, setState];
-};
-
-const useStateWithCallbackInstant = (initialState, callback) => {
-  const [state, setState] = React.useState(initialState);
-
-  React.useLayoutEffect(() => callback(state), [state, callback]);
+  effect(() => callback(state), [state, callback]);
 
   return [state, setState];
 };
+
+const useStateWithCallback = useStateWithCallbackBlueprint(useEffect);
+const useStateWithCallbackInstant = useStateWithCallbackBlueprint(
+  useLayoutEffect,
+);
 
 export { useStateWithCallbackInstant };
 

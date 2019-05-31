@@ -1,6 +1,6 @@
 {
   "name": "use-state-with-callback",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -13,8 +13,8 @@
   "author": "“Robin <hello@rwieruch.com”> (https://www.robinwieruch.de)",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
