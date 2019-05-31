@@ -1,0 +1,6 @@
+logfile
+
+.env
+
+node_modules/
+lib/
