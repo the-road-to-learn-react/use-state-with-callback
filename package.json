@@ -1,6 +1,6 @@
 {
   "name": "use-state-with-callback",
-  "version": "1.0.14",
+  "version": "1.0.16",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -20,7 +20,6 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
