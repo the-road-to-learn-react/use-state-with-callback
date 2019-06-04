@@ -3,7 +3,7 @@ module.exports = {
   output: {
     path: __dirname + '/lib',
     filename: 'index.js',
-    library: 'node-package-open-source-starter',
+    library: 'use-state-with-callback',
     libraryTarget: 'umd',
   },
   externals: {
