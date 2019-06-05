@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/the-road-to-learn-react/use-state-with-callback.svg?branch=master)](https://travis-ci.org/the-road-to-learn-react/use-state-with-callback) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/the-road-to-learn-react/use-state-with-callback.svg)](https://greenkeeper.io/) [![Coverage Status](https://coveralls.io/repos/github/the-road-to-learn-react/use-state-with-callback/badge.svg?branch=master)](https://coveralls.io/github/the-road-to-learn-react/use-state-with-callback?branch=master) ![NPM](https://img.shields.io/npm/l/use-state-with-callback.svg)
 
-Custom hook to include a callback function for useState which was previously available for setState in class components.
+Custom hook to include a callback function for useState which was previously available for setState in class components. [Read more about it here.](https://www.robinwieruch.de/react-usestate-callback/)
 
 ## Installation
 
