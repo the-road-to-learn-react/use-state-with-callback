@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 
 const useStateWithCallback = (initialState, callback) => {
   const [state, setState] = useState(initialState);
