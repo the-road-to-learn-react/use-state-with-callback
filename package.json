@@ -1,6 +1,6 @@
 {
   "name": "use-state-with-callback",
-  "version": "1.0.18",
+  "version": "2.0.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {

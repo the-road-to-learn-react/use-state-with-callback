@@ -10,6 +10,8 @@ Custom hook to include a callback function for useState which was previously ava
 
 ## Usage
 
+**useStateWithCallback:**
+
 ```
 import React from 'react';
 
@@ -31,11 +33,15 @@ const App = () => {
   //   }
   // });
 
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
   return (
     <div>
       {count}
 
-      <button type="button" onClick={() => setCount(count + 1)}>
+      <button type="button" onClick={handleClick}>
         Increase
       </button>
     </div>
@@ -43,15 +49,48 @@ const App = () => {
 };
 ```
 
+**useStateWithCallbackLazy:**
+
+```
+import React from 'react';
+import { useStateWithCallbackLazy } from 'use-state-with-callback';
+
+const App = () => {
+  const [count, setCount] = useStateWithCallbackLazy(0);
+
+  const handleClick = () => {
+    setCount(count + 1, (currentCount) => {
+      if (currentCount > 1) {
+        console.log('Threshold of over 1 reached.');
+      } else {
+        console.log('No threshold reached.');
+      }
+    });
+  };
+
+  return (
+    <div>
+      <p>{count}</p>
+
+      <button type="button" onClick={handleClick}>
+        Increase
+      </button>
+    </div>
+  );
+};
+
+export default App;
+```
+
 ## Contribute
 
-* `git clone git@github.com:the-road-to-learn-react/use-state-with-callback.git`
-* `cd use-state-with-callback`
-* `npm install`
-* `npm run test`
+- `git clone git@github.com:the-road-to-learn-react/use-state-with-callback.git`
+- `cd use-state-with-callback`
+- `npm install`
+- `npm run test`
 
 ### More
 
-* [Publishing a Node Package to NPM](https://www.robinwieruch.de/publish-npm-package-node/)
-* [Node.js Testing Setup](https://www.robinwieruch.de/node-js-testing-mocha-chai/)
-* [React Testing Setup](https://www.robinwieruch.de/react-testing-tutorial/)
+- [Publishing a Node Package to NPM](https://www.robinwieruch.de/publish-npm-package-node/)
+- [Node.js Testing Setup](https://www.robinwieruch.de/node-js-testing-mocha-chai/)
+- [React Testing Setup](https://www.robinwieruch.de/react-testing-tutorial/)
