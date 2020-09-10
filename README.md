@@ -17,6 +17,7 @@ import React from 'react';
 
 import useStateWithCallback from 'use-state-with-callback';
 
+// Note: cannot be used on the server-side (e.g. Next.js)
 // import { useStateWithCallbackInstant } from 'use-state-with-callback';
 
 const App = () => {
