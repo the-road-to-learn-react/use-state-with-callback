@@ -23,10 +23,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [
+    new CopyPlugin([
         { from: './src/index.d.ts', to: './index.d.ts'}
-      ],
-    }),
+      ]),
   ],
 };
