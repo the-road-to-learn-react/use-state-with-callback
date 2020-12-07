@@ -33,10 +33,10 @@ const useStateWithCallbackLazy = initialValue => {
     callbackRef.current = callback;
 
     return setValue(newValue);
-  };
+  }, [setValue]));
 
   return [value, setValueWithCallback];
-}, [setValue]);
+};
 
 export { useStateWithCallbackInstant, useStateWithCallbackLazy };
 
