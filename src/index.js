@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 
 const useStateWithCallback = (initialState, callback) => {
   const [state, setState] = useState(initialState);
@@ -29,14 +29,14 @@ const useStateWithCallbackLazy = initialValue => {
     }
   }, [value]);
 
-  const setValueWithCallback = (newValue, callback) => {
+  const setValueWithCallback = useCallback((newValue, callback) => {
     callbackRef.current = callback;
 
     return setValue(newValue);
   };
 
   return [value, setValueWithCallback];
-};
+}, [setValue]);
 
 export { useStateWithCallbackInstant, useStateWithCallbackLazy };
 
