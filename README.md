@@ -12,7 +12,7 @@ Custom hook to include a callback function for useState which was previously ava
 
 **useStateWithCallback:**
 
-```
+```javascript
 import React from 'react';
 
 import useStateWithCallback from 'use-state-with-callback';
@@ -52,7 +52,7 @@ const App = () => {
 
 **useStateWithCallbackLazy:**
 
-```
+```javascript
 import React from 'react';
 import { useStateWithCallbackLazy } from 'use-state-with-callback';
 
