@@ -12,7 +12,7 @@ Custom hook to include a callback function for useState which was previously ava
 
 **useStateWithCallback:**
 
-```javascript
+```jsx
 import React from 'react';
 
 import useStateWithCallback from 'use-state-with-callback';
