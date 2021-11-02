@@ -52,7 +52,7 @@ const App = () => {
 
 **useStateWithCallbackLazy:**
 
-```javascript
+```jsx
 import React from 'react';
 import { useStateWithCallbackLazy } from 'use-state-with-callback';
 
