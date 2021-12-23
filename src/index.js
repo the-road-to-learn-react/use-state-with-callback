@@ -22,16 +22,16 @@ const useStateWithCallbackLazy = initialValue => {
   const [value, setValue] = useState(initialValue);
 
   useEffect(() => {
-    if (callbackRef.current) {
+    if (
+      callbackRef.current &&
+      typeof callbackRef.current === 'function'
+    ) {
       callbackRef.current(value);
-
-      callbackRef.current = null;
     }
   }, [value]);
 
   const setValueWithCallback = (newValue, callback) => {
     callbackRef.current = callback;
-
     return setValue(newValue);
   };
 
