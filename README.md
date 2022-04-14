@@ -93,6 +93,9 @@ const App = () => {
 export default App;
 ```
 
+## Pitfalls
+
+* When a state update is called with the current value and optimized away, the callback is never called.
 ## Contribute
 
 - `git clone git@github.com:the-road-to-learn-react/use-state-with-callback.git`
