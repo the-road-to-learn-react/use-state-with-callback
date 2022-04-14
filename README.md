@@ -97,7 +97,7 @@ export default App;
 
 * When a state update is called with the current value and optimized away, the callback is never called.
 * `useStateWithCallbackLazy` calls the callback with the scope that existed before update, while this.setState callback can access the updated this.state and `get something()` computed values. This can't be fixed, but it's a problem for people who expect a drop-in replacement.
-
+* When `useStateWithCallbackLazy` state is updated several times with batching (e.g. in an event handler), only the last update calls the callback.
 
 ## Contribute
 
