@@ -29,11 +29,14 @@ const useStateWithCallbackLazy = initialValue => {
     }
   }, [value]);
 
-  const setValueWithCallback = (newValue, callback) => {
-    callbackRef.current = callback;
+  const setValueWithCallback = React.useCallback(
+    (newValue, callback) => {
+      callbackRef.current = callback;
 
-    return setValue(newValue);
-  };
+      return setValue(newValue);
+    },
+    [],
+  );
 
   return [value, setValueWithCallback];
 };
