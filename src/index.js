@@ -3,7 +3,15 @@ import * as React from 'react';
 const useStateWithCallback = (initialState, callback) => {
   const [state, setState] = React.useState(initialState);
 
-  React.useEffect(() => callback(state), [state, callback]);
+  const didMount = React.useRef(false);
+
+  React.useEffect(() => {
+    if (didMount.current) {
+      callback(state);
+    } else {
+      didMount.current = true;
+    }
+  }, [state, callback]);
 
   return [state, setState];
 };
@@ -11,7 +19,15 @@ const useStateWithCallback = (initialState, callback) => {
 const useStateWithCallbackInstant = (initialState, callback) => {
   const [state, setState] = React.useState(initialState);
 
-  React.useLayoutEffect(() => callback(state), [state, callback]);
+  const didMount = React.useRef(false);
+
+  React.useLayoutEffect(() => {
+    if (didMount.current) {
+      callback(state);
+    } else {
+      didMount.current = true;
+    }
+  }, [state, callback]);
 
   return [state, setState];
 };

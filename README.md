@@ -1,6 +1,6 @@
 # useStateWithCallback React Hook
 
-[![Build Status](https://travis-ci.org/the-road-to-learn-react/use-state-with-callback.svg?branch=master)](https://travis-ci.org/the-road-to-learn-react/use-state-with-callback) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/the-road-to-learn-react/use-state-with-callback.svg)](https://greenkeeper.io/) ![NPM](https://img.shields.io/npm/l/use-state-with-callback.svg)
+[![Build Status](https://travis-ci.org/the-road-to-learn-react/use-state-with-callback.svg?branch=master)](https://travis-ci.org/the-road-to-learn-react/use-state-with-callback) [![Greenkeeper badge](https://badges.greenkeeper.io/the-road-to-learn-react/use-state-with-callback.svg)](https://greenkeeper.io/) ![NPM](https://img.shields.io/npm/l/use-state-with-callback.svg)
 
 Custom hook to include a callback function for useState which was previously available for setState in class components. [Read more about it here.](https://www.robinwieruch.de/react-usestate-callback/)
 
@@ -13,7 +13,7 @@ Custom hook to include a callback function for useState which was previously ava
 **useStateWithCallback:**
 
 ```jsx
-import React from 'react';
+import * as React from 'react';
 
 import useStateWithCallback from 'use-state-with-callback';
 
@@ -21,16 +21,24 @@ import useStateWithCallback from 'use-state-with-callback';
 // import { useStateWithCallbackInstant } from 'use-state-with-callback';
 
 const App = () => {
-  const [count, setCount] = useStateWithCallback(0, count => {
-    if (count > 1) {
-      console.log('render, then callback.');
-      console.log('otherwise use useStateWithCallbackInstant()');
+  const [count, setCount] = useStateWithCallback(0, currentCount => {
+    console.log('render, then callback.');
+    console.log('otherwise use useStateWithCallbackInstant()');
+
+    if (currentCount > 1) {
+      console.log('Threshold of over 1 reached.');
+    } else {
+      console.log('No threshold reached.');
     }
   });
 
-  // const [count, setCount] = useStateWithCallbackInstant(0, count => {
-  //   if (count > 1) {
-  //     console.log('render with instant callback.');
+  // const [count, setCount] = useStateWithCallbackInstant(0, currentCount => {
+  //   console.log('render with instant callback.');
+
+  //   if (currentCount > 1) {
+  //     console.log('Threshold of over 1 reached.');
+  //   } else {
+  //     console.log('No threshold reached.');
   //   }
   // });
 
@@ -48,12 +56,14 @@ const App = () => {
     </div>
   );
 };
+
+export default App;
 ```
 
 **useStateWithCallbackLazy:**
 
 ```jsx
-import React from 'react';
+import * as React from 'react';
 import { useStateWithCallbackLazy } from 'use-state-with-callback';
 
 const App = () => {
