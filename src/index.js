@@ -1,27 +1,27 @@
-import { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import * as React from 'react';
 
 const useStateWithCallback = (initialState, callback) => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = React.useState(initialState);
 
-  useEffect(() => callback(state), [state, callback]);
+  React.useEffect(() => callback(state), [state, callback]);
 
   return [state, setState];
 };
 
 const useStateWithCallbackInstant = (initialState, callback) => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = React.useState(initialState);
 
-  useLayoutEffect(() => callback(state), [state, callback]);
+  React.useLayoutEffect(() => callback(state), [state, callback]);
 
   return [state, setState];
 };
 
 const useStateWithCallbackLazy = initialValue => {
-  const callbackRef = useRef(null);
+  const callbackRef = React.useRef(null);
 
-  const [value, setValue] = useState(initialValue);
+  const [value, setValue] = React.useState(initialValue);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (callbackRef.current) {
       callbackRef.current(value);
 
